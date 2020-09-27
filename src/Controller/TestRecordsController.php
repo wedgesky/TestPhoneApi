@@ -25,32 +25,59 @@ class TestRecordsController extends AbstractController
         $toCorrectList = [];
         $failedList = [];
         $serviceList = "";
+        $numRow = 0;
 
         try{
             $uploadedFile = $request->files->get('file');
             $entityManager = $this->getDoctrine()->getManager();
 
-            if ( $result == null and ($fp = fopen($uploadedFile, "r")) !== FALSE) {
+            if ( ($fp = fopen($uploadedFile, "r")) !== FALSE) {
                 while (($row = fgetcsv($fp)) !== FALSE ){
                     $num = count($row);
+                    $record = new TestPhone();
+                    if($numRow>0){
 
-                    for ($i=0; $i < $num; $i++) {
-                        if(is_numeric($row[$i])){
-                            if(strlen($row[$i]) == self::CORRECT_LENGTH){
-                                array_push($correctList, getTestPhone($row[$i], self::MESSAGE_CORRECT));
+                        if(is_numeric($row[1])){
+                            if(strlen($row[1]) == self::CORRECT_LENGTH){
+                                $record = new TestPhone();
+
+                                $record->setSmsPhone($row[1]);
+                                $record->setResult(self::MESSAGE_CORRECT);
+
+
+                                array_push($correctList, $record);
+
+                                //array_push($correctList, setTestPhone($record, $row[1], self::MESSAGE_CORRECT));
                             }else{
-                                array_push($toCorrectList, getTestPhone($row[$i], self::MESSAGE_TO_CORRECT));
+                                $record->setSmsPhone($row[1]);
+                                $record->setResult(self::MESSAGE_TO_CORRECT);
+                                if(strlen($row[1])>self::CORRECT_LENGTH){
+                                    $record->setReason("TOO LONG. ORIGINAL: ".$row[1]);
+                                }else{
+                                    $record->setReason("TOO SHORT. ORIGINAL: ".$row[1]);
+                                }
+
+                                $record->setSmsPhone(substr( $row[1], 0, self::CORRECT_LENGTH));
+                                array_push($toCorrectList, $record);
+                                //array_push($toCorrectList, setTestPhone($record, $row[1], self::MESSAGE_TO_CORRECT));
                             }
                         }else{
-                            array_push($failedList, getTestPhone($row[$i], self::MESSAGE_FAILED));
+                            $record->setSmsPhone($row[1]);
+                            $record->setResult(self::MESSAGE_FAILED);
+                            array_push($failedList, $record);
+
+                            //array_push($failedList, setTestPhone($record, $row[1], self::MESSAGE_FAILED));
                         }
                     }
+
+                    $numRow++;
+
                 }
             }
 
             $serviceList.= "sms_phone,reason\n";
 
-            if(count($correctList> 0)){
+            if(count($correctList)> 0){
                 $serviceList.= "CORRECT_SMS_PHONE,\n";
             }
 
@@ -58,7 +85,7 @@ class TestRecordsController extends AbstractController
                 $serviceList.= $value->getSmsPhone(). ",\n";
                 $entityManager->persist($value);
             }
-            if(count($toCorrectList> 0)){
+            if(count($toCorrectList)> 0){
                 $serviceList.= "TO_CORRECT_SMS_PHONE,\n";
             }
 
@@ -67,7 +94,7 @@ class TestRecordsController extends AbstractController
                 $entityManager->persist($value);
             }
 
-            if(count($failedList> 0)){
+            if(count($failedList)> 0){
                 $serviceList.= "FAILED_SMS_PHONE,\n";
             }
             foreach ($failedList as $key => $value){
@@ -89,8 +116,9 @@ class TestRecordsController extends AbstractController
 
     }
 
-    private  function getTestPhone(string $phoneNumber, string $message) : TestPhone{
-        $record = new TestPhone();
+
+    private  function setTestPhone(TestPhone $record, string $phoneNumber, string $message) {
+
         $record->setSmsPhone($phoneNumber);
         $record->setResult($message);
 
@@ -100,6 +128,5 @@ class TestRecordsController extends AbstractController
 
         }
 
-        return $record;
     }
 }

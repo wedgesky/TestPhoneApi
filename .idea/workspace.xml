@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="445c7d7d-b7f1-4553-970d-b6bbed3f530d" name="Default Changelist" comment="" />
+    <list default="true" id="445c7d7d-b7f1-4553-970d-b6bbed3f530d" name="Default Changelist" comment="First commit">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/TestRecordsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/TestRecordsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/TestPhone.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/TestPhone.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,6 +17,12 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PhpDebugGeneral" listening_started="true" />
+  <component name="PhpServers">
+    <servers>
+      <server host="testphone.localhost" id="6b93d45c-5956-499b-991a-b9e812d29059" name="testphone.localhost" />
+    </servers>
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -138,25 +148,116 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1601213128917</updated>
-      <workItem from="1601213130156" duration="6319000" />
+      <workItem from="1601213130156" duration="12661000" />
     </task>
+    <task id="LOCAL-00001" summary="First commit">
+      <created>1601220210646</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1601220210646</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="First commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="First commit" />
   </component>
   <component name="WindowStateProjectService">
     <state x="272" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1601214892302">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="272" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1601214892302" />
+    <state x="503" y="127" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method0" timestamp="1601221361294">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="503" y="127" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method0/0.0.1366.728@0.0.1366.728" timestamp="1601221361294" />
+    <state x="296" y="100" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method1" timestamp="1601229743754">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="296" y="100" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method1/0.0.1366.728@0.0.1366.728" timestamp="1601229743754" />
+    <state width="708" height="466" key="DebuggerActiveHint" timestamp="1601232602344">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="708" height="466" key="DebuggerActiveHint/0.0.1366.728@0.0.1366.728" timestamp="1601232602344" />
+    <state width="1305" height="219" key="GridCell.Tab.0.bottom" timestamp="1601232586041">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1305" height="219" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1601232586041" />
+    <state width="1305" height="219" key="GridCell.Tab.0.center" timestamp="1601232586041">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1305" height="219" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1601232586041" />
+    <state width="1305" height="219" key="GridCell.Tab.0.left" timestamp="1601232586032">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1305" height="219" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1601232586032" />
+    <state width="1305" height="219" key="GridCell.Tab.0.right" timestamp="1601232586041">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1305" height="219" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1601232586041" />
+    <state width="1305" height="219" key="GridCell.Tab.1.bottom" timestamp="1601232586041">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1305" height="219" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1601232586041" />
+    <state width="1305" height="219" key="GridCell.Tab.1.center" timestamp="1601232586041">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1305" height="219" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1601232586041" />
+    <state width="1305" height="219" key="GridCell.Tab.1.left" timestamp="1601232586041">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1305" height="219" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1601232586041" />
+    <state width="1305" height="219" key="GridCell.Tab.1.right" timestamp="1601232586041">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1305" height="219" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1601232586041" />
+    <state width="1305" height="219" key="GridCell.Tab.2.bottom" timestamp="1601232586041">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1305" height="219" key="GridCell.Tab.2.bottom/0.0.1366.728@0.0.1366.728" timestamp="1601232586041" />
+    <state width="1305" height="219" key="GridCell.Tab.2.center" timestamp="1601232586041">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1305" height="219" key="GridCell.Tab.2.center/0.0.1366.728@0.0.1366.728" timestamp="1601232586041" />
+    <state width="1305" height="219" key="GridCell.Tab.2.left" timestamp="1601232586041">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1305" height="219" key="GridCell.Tab.2.left/0.0.1366.728@0.0.1366.728" timestamp="1601232586041" />
+    <state width="1305" height="219" key="GridCell.Tab.2.right" timestamp="1601232586041">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1305" height="219" key="GridCell.Tab.2.right/0.0.1366.728@0.0.1366.728" timestamp="1601232586041" />
     <state x="457" y="86" key="NewPhpClassDialog" timestamp="1601214197921">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="457" y="86" key="NewPhpClassDialog/0.0.1366.728@0.0.1366.728" timestamp="1601214197921" />
+    <state x="498" y="297" key="ReplaceDuplicatesPrompt" timestamp="1601221374498">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="498" y="297" key="ReplaceDuplicatesPrompt/0.0.1366.728@0.0.1366.728" timestamp="1601221374498" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1601220224012">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1601220224012" />
+    <state x="390" y="97" width="587" height="534" key="find.popup" timestamp="1601230641342">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="390" y="97" width="587" height="534" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1601230641342" />
     <state x="485" y="270" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1601218869303">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="485" y="270" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1366.728@0.0.1366.728" timestamp="1601218869303" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="index.php">
+        <watch expression="getTestPhone(&quot;dcd&quot;, &quot;prova&quot;)" language="PHP" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

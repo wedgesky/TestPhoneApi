@@ -64,12 +64,12 @@ class TestPhone
 
     public function getReason(): ?string
     {
-        return $this->Reason;
+        return $this->reason;
     }
 
-    public function setReason(string $Reason): self
+    public function setReason(string $reason): self
     {
-        $this->Reason = $Reason;
+        $this->reason = $reason;
 
         return $this;
     }
