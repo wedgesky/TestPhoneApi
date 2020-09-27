@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="445c7d7d-b7f1-4553-970d-b6bbed3f530d" name="Default Changelist" comment="introdotto form di test">
-      <change afterPath="$PROJECT_DIR$/tests/Controller/TestRecordsControllerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/TestRecordsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/TestRecordsController.php" afterDir="false" />
-    </list>
+    <list default="true" id="445c7d7d-b7f1-4553-970d-b6bbed3f530d" name="Default Changelist" comment="introdotti test" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,7 +14,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="PhpDebugGeneral" listening_started="true" />
   <component name="PhpServers">
     <servers>
       <server host="testphone.localhost" id="6b93d45c-5956-499b-991a-b9e812d29059" name="testphone.localhost" />
@@ -155,7 +149,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1601213128917</updated>
-      <workItem from="1601213130156" duration="23319000" />
+      <workItem from="1601213130156" duration="23616000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1601220210646</created>
@@ -185,7 +179,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601243011911</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="introdotti test">
+      <created>1601244166687</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1601244166687</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -196,7 +197,8 @@
     <MESSAGE value="completata funzionalità api" />
     <MESSAGE value="readme" />
     <MESSAGE value="introdotto form di test" />
-    <option name="LAST_COMMIT_MESSAGE" value="introdotto form di test" />
+    <MESSAGE value="introdotti test" />
+    <option name="LAST_COMMIT_MESSAGE" value="introdotti test" />
   </component>
   <component name="WindowStateProjectService">
     <state x="272" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1601214892302">
@@ -283,10 +285,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="512" y="84" key="RollbackChangesDialog/0.0.1366.728@0.0.1366.728" timestamp="1601235352480" />
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1601243019270">
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1601244174261">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1601243019270" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1601244174261" />
     <state x="390" y="97" width="587" height="534" key="find.popup" timestamp="1601230641342">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
