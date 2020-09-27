@@ -3,9 +3,11 @@
 namespace App\Controller;
 
 use App\Entity\TestPhone;
+use App\Form\TestPhoneType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class TestRecordsController extends AbstractController
@@ -15,10 +17,59 @@ class TestRecordsController extends AbstractController
     CONST MESSAGE_TO_CORRECT = "TO CORRECT";
     CONST MESSAGE_FAILED = "FAILED";
 
+
+
+    /**
+     * @Route("/new", name="test_phone_new", methods={"GET","POST"})
+     */
+    public function new(Request $request): Response
+    {
+        $testPhone = new TestPhone();
+
+
+        if($request->query->get('result') != null){
+            $testPhone->setResult($request->query->get('result'));
+        }
+
+
+        if($request->query->get('reason') != null){
+            $testPhone->setReason($request->query->get('reason'));
+        }
+
+        if($request->query->get('sms_phone') != null){
+            $testPhone->setSmsPhone($request->query->get('sms_phone'));
+        }
+
+
+        $form = $this->createForm(TestPhoneType::class, $testPhone);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $testedPhone = $this->getTestPhone( $testPhone->getSmsPhone() );
+            $testPhone->setResult($testedPhone->getResult());
+
+
+            if(strlen($testedPhone->getReason())>0){
+                $testPhone->getReason($testedPhone->getReason());
+
+            }
+
+            return $this->redirectToRoute("test_phone_new",["reason"=>$testPhone->getReason(),
+                "sms_phone" => $testPhone->getSmsPhone(),
+                "result" => $testPhone->getResult()]);
+
+        }
+
+        return $this->render('test_phone/new.html.twig', [
+            'test_phone' => $testPhone,
+            'form' => $form->createView(),
+        ]);
+    }
+
     /**
      * @Route("/test/records", name="test_records", methods={"POST"})
      */
-    public function index(Request $request): JsonResponse
+    public function testRecords(Request $request): JsonResponse
     {
         $result = null;
         $correctList = [];
@@ -34,39 +85,15 @@ class TestRecordsController extends AbstractController
             if ( ($fp = fopen($uploadedFile, "r")) !== FALSE) {
                 while (($row = fgetcsv($fp)) !== FALSE ){
                     $num = count($row);
-                    $record = new TestPhone();
                     if($numRow>0){
+                        $record = $this->getTestPhone($row[1]);
 
-                        if(is_numeric($row[1])){
-                            if(strlen($row[1]) == self::CORRECT_LENGTH){
-                                $record = new TestPhone();
-
-                                $record->setSmsPhone($row[1]);
-                                $record->setResult(self::MESSAGE_CORRECT);
-
-
-                                array_push($correctList, $record);
-
-                                //array_push($correctList, setTestPhone($record, $row[1], self::MESSAGE_CORRECT));
-                            }else{
-                                $record->setSmsPhone($row[1]);
-                                $record->setResult(self::MESSAGE_TO_CORRECT);
-                                if(strlen($row[1])>self::CORRECT_LENGTH){
-                                    $record->setReason("TOO LONG. ORIGINAL: ".$row[1]);
-                                }else{
-                                    $record->setReason("TOO SHORT. ORIGINAL: ".$row[1]);
-                                }
-
-                                $record->setSmsPhone(substr( $row[1], 0, self::CORRECT_LENGTH));
-                                array_push($toCorrectList, $record);
-                                //array_push($toCorrectList, setTestPhone($record, $row[1], self::MESSAGE_TO_CORRECT));
-                            }
+                        if($record->getResult() == self::MESSAGE_CORRECT){
+                            array_push($correctList, $record);
+                        }elseif ($record->getResult() == self::MESSAGE_TO_CORRECT){
+                            array_push($toCorrectList, $record);
                         }else{
-                            $record->setSmsPhone($row[1]);
-                            $record->setResult(self::MESSAGE_FAILED);
                             array_push($failedList, $record);
-
-                            //array_push($failedList, setTestPhone($record, $row[1], self::MESSAGE_FAILED));
                         }
                     }
 
@@ -116,17 +143,33 @@ class TestRecordsController extends AbstractController
 
     }
 
+    /**
+     * @param string|null $row
+     * @return TestPhone
+     */
+    public static function getTestPhone(?string $phone): TestPhone
+    {
+        $record = new TestPhone();
+        $record->setSmsPhone($phone);
 
-    private  function setTestPhone(TestPhone $record, string $phoneNumber, string $message) {
+        if(is_numeric($phone)){
+            if(strlen($phone) == self::CORRECT_LENGTH){
+                $record->setResult(self::MESSAGE_CORRECT);
+            }else{
+                $record->setResult( self::MESSAGE_TO_CORRECT);
+                if (strlen($phone) > self::CORRECT_LENGTH) {
+                    $record->setReason("TOO LONG. ORIGINAL: " . $phone);
+                } else {
+                    $record->setReason("TOO SHORT. ORIGINAL: " . $phone);
+                }
+                $record->setSmsPhone(substr($phone, 0, self::CORRECT_LENGTH));
 
-        $record->setSmsPhone($phoneNumber);
-        $record->setResult($message);
-
-        if($message == self::MESSAGE_TO_CORRECT){
-            $record->setReason("TOO LONG. ORIGINAL:".$phoneNumber);
-            $record->setSmsPhone(substr( $phoneNumber, 0, self::CORRECT_LENGTH));
+            }
+        }else{
+            $record->setResult( self::MESSAGE_FAILED);
 
         }
 
+        return $record;
     }
 }
