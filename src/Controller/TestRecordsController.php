@@ -12,10 +12,10 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class TestRecordsController extends AbstractController
 {
-    CONST CORRECT_LENGTH = 11;
-    CONST MESSAGE_CORRECT = "CORRECT";
-    CONST MESSAGE_TO_CORRECT = "TO CORRECT";
-    CONST MESSAGE_FAILED = "FAILED";
+    public CONST CORRECT_LENGTH = 11;
+    public CONST MESSAGE_CORRECT = "CORRECT";
+    public CONST MESSAGE_TO_CORRECT = "TO CORRECT";
+    public CONST MESSAGE_FAILED = "FAILED";
 
 
 
