@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="445c7d7d-b7f1-4553-970d-b6bbed3f530d" name="Default Changelist" comment="First commit">
+    <list default="true" id="445c7d7d-b7f1-4553-970d-b6bbed3f530d" name="Default Changelist" comment="completata funzionalità api">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/TestRecordsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/TestRecordsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/TestPhone.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/TestPhone.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,7 +146,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1601213128917</updated>
-      <workItem from="1601213130156" duration="12661000" />
+      <workItem from="1601213130156" duration="13499000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1601220210646</created>
@@ -157,7 +155,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601220210646</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="completata funzionalità api">
+      <created>1601233157170</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1601233157170</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -165,7 +170,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="First commit" />
+    <MESSAGE value="completata funzionalità api" />
+    <option name="LAST_COMMIT_MESSAGE" value="completata funzionalità api" />
   </component>
   <component name="WindowStateProjectService">
     <state x="272" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1601214892302">
@@ -240,10 +246,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="498" y="297" key="ReplaceDuplicatesPrompt/0.0.1366.728@0.0.1366.728" timestamp="1601221374498" />
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1601220224012">
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1601233165670">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1601220224012" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1601233165670" />
     <state x="390" y="97" width="587" height="534" key="find.popup" timestamp="1601230641342">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
